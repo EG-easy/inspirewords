@@ -1,4 +1,4 @@
-package main
+package text
 
 import (
 	"time"
@@ -6,9 +6,8 @@ import (
 )
 
 func ChooseTweet()string{
-	d := time.Now().Day()
-	m := time.Now().Month()
-	tweetlist :=  [31]string{
+
+	TweetList :=  [31]string{
 		"問題は未来だ。だから私は、過去を振り返らない\n" +
 			"by ビル・ゲイツ（マイクロソフト創業者）",
 		"（僕は毎日のようにこう自問している）「今僕は自分にできる一番大切なことをやっているのだろうか」と\n" +
@@ -72,11 +71,11 @@ func ChooseTweet()string{
 		"ハングリーになれ！愚か者になれ！\n" +
 			"by スティーブ・ジョブズ（アップル創業者）",
 	}
-	return  tweetlist[d-1]
-	//tweetoftoday := tweetlist[t-1]
-	//fmt.Printf("【%d月%d日】\n %s",m,d, tweetoftoday)
-}
 
-//func main(){
-//	 ChooseTweet()
-//}
+	d := time.Now().Day()
+	m := time.Now().Month()
+
+	TweetContent := TweetList[d-1]
+	TweetOfToday := fmt.Sprintf("【%d月%d日】\n %s",m,d, TweetContent)
+	return TweetOfToday
+}
