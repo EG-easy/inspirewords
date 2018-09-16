@@ -12,7 +12,7 @@ func main() {
 	chStop := make(chan int, 1)
 	TimerFunc(chStop)
 
-	time.Sleep(time.Second * 100)
+	time.Sleep(time.Hour * 24 * 365)
 	chStop <- 0 // Tickerをstopさせるメッセージ
 
 	close(chStop)
